@@ -1,5 +1,6 @@
 import './App.css';
-import Sidebar from './components/Sidebar.js';
+import Sidebar from './components/Sidebar';
+import SearchBar from './components/SearchBar';
 
 function App() {
   return (

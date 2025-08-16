@@ -1,1 +1,63 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.Sidebar {
+    height: 100vh;
+    width: 250px;
+    background-color: #EDD6D1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    font-family: 'Playfair Display';
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-bottom: 7rem;
+    margin-top: 2em;
+
+}
+
+.profile {
+    width: 100px;       
+    height: 100px;      
+    border-radius: 50%;  
+    object-fit: cover;   /* make the image fit in circle */
+    border: 2px solid #D9D9D9;
+    background-color: white;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+
+}
+
+.Sidebar a {
+    text-decoration: none;
+    color: black;
+    padding: 0.6rem 1.2rem 0.6rem 1.2rem;
+    font-size: 1.2rem;
+}
+
+.Sidebar a:active {
+    border: 2px solid #F0E6D9;
+    border-radius: 8px;
+    background-color: #F0E6D9;
+    height: 30px;
+    width: 150px;
+
+}
+
+.Sidebar a:hover {
+    color: #4f4d4d;
+}
+
+.nav-icon {
+    margin-right: 0.5rem;
+}

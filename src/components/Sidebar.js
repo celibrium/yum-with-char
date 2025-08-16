@@ -1,21 +1,31 @@
-import './components/Sidebar.css';
+import './Sidebar.css'
+import pfp from '../assets/mofusand.png';
+import { IoHomeOutline } from "react-icons/io5";
+import { FaBook } from "react-icons/fa6";
+import { IoBookOutline } from "react-icons/io5";
+import { MdFavorite } from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
+import { IoPersonOutline } from "react-icons/io5";
 
 function Sidebar() {
     return (
 
-        <div>
-            <h1 className = "pfp"> temp </h1>
-            <h1> Charmaine Lee </h1>
+        // aside is common element used for sidebars
+        <aside className = "Sidebar">
+            <div className = "profile-container">
+                <img src={pfp} alt="Mofusand" className = "profile"/>
+                <h3> Charmaine Lee </h3>
+            </div>
 
             <nav>
-                <a href = '#'> Home </a>
-                <a href = '#'> My Recipes </a>
-                <a href = '#'> Favourites </a>
-                <a href = '#'> About me </a>
+                <a href = '#'><IoHomeOutline className = "nav-icon" /> Home </a>
+                <a href = '#'><IoBookOutline className = "nav-icon"/> My Recipes </a>
+                <a href = '#'><MdFavoriteBorder className = "nav-icon" /> Favourites </a>
+                <a href = '#'><IoPersonOutline className = "nav-icon" />About me </a>
 
             </nav>
 
-        </div>
+        </aside>
 
 
     );
