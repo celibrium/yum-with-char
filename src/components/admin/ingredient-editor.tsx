@@ -48,7 +48,7 @@ export function IngredientEditor({
       {rows.map((r, i) => (
         <div
           key={i}
-          className="grid grid-cols-12 gap-2 items-center"
+          className="grid grid-cols-2 gap-2 sm:grid-cols-12 sm:items-center rounded-lg sm:rounded-none border border-[var(--color-border)] sm:border-0 p-3 sm:p-0"
         >
           <input
             type="number"
@@ -64,7 +64,7 @@ export function IngredientEditor({
               };
               update(next);
             }}
-            className="col-span-2 rounded-lg border border-[var(--color-border)] px-2 py-1.5 text-sm bg-white"
+            className="col-span-1 sm:col-span-2 rounded-lg border border-[var(--color-border)] px-2 py-1.5 text-sm bg-white"
           />
           <input
             type="text"
@@ -75,7 +75,7 @@ export function IngredientEditor({
               next[i] = { ...r, unit: e.target.value || null };
               update(next);
             }}
-            className="col-span-2 rounded-lg border border-[var(--color-border)] px-2 py-1.5 text-sm bg-white"
+            className="col-span-1 sm:col-span-2 rounded-lg border border-[var(--color-border)] px-2 py-1.5 text-sm bg-white"
           />
           <input
             type="text"
@@ -86,7 +86,7 @@ export function IngredientEditor({
               next[i] = { ...r, name: e.target.value };
               update(next);
             }}
-            className="col-span-4 rounded-lg border border-[var(--color-border)] px-2 py-1.5 text-sm bg-white"
+            className="col-span-2 sm:col-span-4 rounded-lg border border-[var(--color-border)] px-2 py-1.5 text-sm bg-white"
             required
           />
           <input
@@ -98,13 +98,13 @@ export function IngredientEditor({
               next[i] = { ...r, notes: e.target.value || null };
               update(next);
             }}
-            className="col-span-3 rounded-lg border border-[var(--color-border)] px-2 py-1.5 text-sm bg-white"
+            className="col-span-2 sm:col-span-3 rounded-lg border border-[var(--color-border)] px-2 py-1.5 text-sm bg-white"
           />
-          <div className="col-span-1 flex justify-end gap-1">
+          <div className="col-span-2 sm:col-span-1 flex justify-end gap-1">
             <button
               type="button"
               onClick={() => move(i, -1)}
-              className="text-xs px-1 text-[var(--color-ink-soft)] hover:text-[var(--color-accent)]"
+              className="h-9 w-9 sm:h-7 sm:w-7 grid place-items-center rounded-full text-[var(--color-ink-soft)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-soft)]"
               aria-label="Move up"
             >
               ↑
@@ -112,7 +112,7 @@ export function IngredientEditor({
             <button
               type="button"
               onClick={() => move(i, 1)}
-              className="text-xs px-1 text-[var(--color-ink-soft)] hover:text-[var(--color-accent)]"
+              className="h-9 w-9 sm:h-7 sm:w-7 grid place-items-center rounded-full text-[var(--color-ink-soft)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-soft)]"
               aria-label="Move down"
             >
               ↓
@@ -120,7 +120,7 @@ export function IngredientEditor({
             <button
               type="button"
               onClick={() => removeRow(i)}
-              className="text-xs px-1 text-red-700 hover:text-red-900"
+              className="h-9 w-9 sm:h-7 sm:w-7 grid place-items-center rounded-full text-red-700 hover:text-red-900 hover:bg-red-50"
               aria-label="Remove"
             >
               ×

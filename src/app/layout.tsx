@@ -1,8 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Pacifico, Caveat } from "next/font/google";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#fdfaf5",
+};
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -55,12 +61,12 @@ function SiteHeader() {
             alt="YumWithChar"
             width={40}
             height={40}
-            className="h-10 w-10 rounded-full object-cover"
+            className="h-9 w-9 sm:h-10 sm:w-10 rounded-full object-cover"
             sizes="40px"
             priority
           />
         </Link>
-        <nav className="flex items-center gap-5 text-sm">
+        <nav className="flex items-center gap-3 sm:gap-5 text-sm">
           <Link href="/" className="hover:text-[var(--color-accent)]">
             Home
           </Link>
@@ -79,7 +85,7 @@ function SiteHeader() {
 function SiteFooter() {
   return (
     <footer className="border-t border-[var(--color-border)] mt-12">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 text-xs text-[var(--color-ink-soft)] flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 text-xs text-[var(--color-ink-soft)] flex flex-col sm:flex-row gap-2 sm:gap-0 items-start sm:items-center sm:justify-between">
         <span>made with love by char</span>
         <Link href="/login" className="hover:text-[var(--color-accent)]">
           admin

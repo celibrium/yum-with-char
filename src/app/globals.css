@@ -29,3 +29,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* Stop iOS Safari from zooming on focus by ensuring inputs are >= 16px on phones. */
+@media (max-width: 640px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
