@@ -31,8 +31,6 @@ export default async function EditRecipePage({
           slug: recipe.slug,
           description: recipe.description,
           cuisine: recipe.cuisine,
-          course: recipe.course,
-          difficulty: recipe.difficulty,
           prep_time_minutes: recipe.prep_time_minutes,
           cook_time_minutes: recipe.cook_time_minutes,
           servings: recipe.servings,

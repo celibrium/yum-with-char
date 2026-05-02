@@ -17,8 +17,6 @@ export default function NewRecipePage() {
           slug: "",
           description: null,
           cuisine: null,
-          course: null,
-          difficulty: null,
           prep_time_minutes: null,
           cook_time_minutes: null,
           servings: null,

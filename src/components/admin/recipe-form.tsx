@@ -20,8 +20,6 @@ export type RecipeFormInitial = {
   slug: string;
   description: string | null;
   cuisine: string | null;
-  course: string | null;
-  difficulty: string | null;
   prep_time_minutes: number | null;
   cook_time_minutes: number | null;
   servings: number | null;
@@ -63,11 +61,7 @@ export function RecipeForm({
   const heroUrl = recipeImageUrl(initial.hero_image_path);
 
   return (
-    <form
-      action={formAction}
-      className="space-y-8"
-      encType="multipart/form-data"
-    >
+    <form action={formAction} className="space-y-8">
       <input
         type="hidden"
         name="ingredients"
@@ -141,36 +135,14 @@ export function RecipeForm({
             maxLength={2000}
           />
         </Field>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <Field label="Cuisine">
-            <input
-              name="cuisine"
-              defaultValue={initial.cuisine ?? ""}
-              className="w-full rounded-lg border border-[var(--color-border)] px-3 py-2 bg-white"
-              maxLength={80}
-            />
-          </Field>
-          <Field label="Course">
-            <input
-              name="course"
-              defaultValue={initial.course ?? ""}
-              className="w-full rounded-lg border border-[var(--color-border)] px-3 py-2 bg-white"
-              maxLength={80}
-            />
-          </Field>
-          <Field label="Difficulty">
-            <select
-              name="difficulty"
-              defaultValue={initial.difficulty ?? ""}
-              className="w-full rounded-lg border border-[var(--color-border)] px-3 py-2 bg-white"
-            >
-              <option value="">—</option>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </Field>
-        </div>
+        <Field label="Cuisine">
+          <input
+            name="cuisine"
+            defaultValue={initial.cuisine ?? ""}
+            className="w-full rounded-lg border border-[var(--color-border)] px-3 py-2 bg-white"
+            maxLength={80}
+          />
+        </Field>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <Field label="Prep (min)">
             <input

@@ -45,14 +45,16 @@ export default async function RecipeDetailPage({
 
   return (
     <article className="space-y-8">
-      <Link
-        href="/recipes"
-        className="text-sm text-[var(--color-ink-soft)] hover:text-[var(--color-accent)]"
-      >
-        ← All recipes
-      </Link>
+      <div>
+        <Link
+          href="/recipes"
+          className="inline-block text-sm text-[var(--color-ink-soft)] hover:text-[var(--color-accent)]"
+        >
+          ← All recipes
+        </Link>
+      </div>
 
-      <header className="space-y-3">
+      <header className="space-y-3 mt-4 sm:mt-8">
         <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-5xl tracking-tight">
           {recipe.title}
         </h1>
@@ -65,7 +67,6 @@ export default async function RecipeDetailPage({
           {recipe.cuisine && (
             <Meta label="Cuisine" value={recipe.cuisine} />
           )}
-          {recipe.course && <Meta label="Course" value={recipe.course} />}
           {recipe.servings != null && (
             <Meta label="Serves" value={String(recipe.servings)} />
           )}
@@ -83,9 +84,6 @@ export default async function RecipeDetailPage({
           )}
           {totalTime > 0 && (
             <Meta label="Total" value={`${totalTime} min`} />
-          )}
-          {recipe.difficulty && (
-            <Meta label="Difficulty" value={recipe.difficulty} />
           )}
         </dl>
         {recipe.tags.length > 0 && (

@@ -15,13 +15,12 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-10">
-      <section className="rounded-2xl bg-[var(--color-accent-soft)] border border-[var(--color-border)] p-8 sm:p-12">
-        <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-5xl tracking-tight">
-          A recipe book, just for me.
+      <section className="rounded-2xl bg-[var(--color-accent-soft)] border border-[var(--color-border)] p-10 sm:p-14 text-center">
+        <h1 className="font-[family-name:var(--font-pacifico)] text-5xl sm:text-7xl tracking-tight text-[var(--color-accent)]">
+          YumWithChar
         </h1>
-        <p className="mt-3 max-w-xl text-[var(--color-ink-soft)]">
-          A small corner of the internet for the dishes I make and love. Browse
-          freely; only I can add or change them.
+        <p className="mt-3 text-base sm:text-lg text-[var(--color-ink-soft)]">
+          journal to share my recipes that I love
         </p>
         <Link
           href="/recipes"

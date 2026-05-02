@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { Pacifico, Caveat } from "next/font/google";
 import "./globals.css";
+
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-pacifico",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -14,7 +29,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${pacifico.variable} ${caveat.variable}`}>
       <body className="min-h-screen flex flex-col">
         <SiteHeader />
         <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 py-8">
@@ -32,9 +47,18 @@ function SiteHeader() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
         <Link
           href="/"
-          className="font-[family-name:var(--font-display)] text-xl tracking-tight"
+          className="flex items-center shrink-0 rounded-full ring-2 ring-transparent hover:ring-[var(--color-accent)]/30 transition focus:outline-none focus-visible:ring-[var(--color-accent)]/50"
+          aria-label="YumWithChar home"
         >
-          yum with char
+          <Image
+            src="/brand-icon.png"
+            alt="YumWithChar"
+            width={40}
+            height={40}
+            className="h-10 w-10 rounded-full object-cover"
+            sizes="40px"
+            priority
+          />
         </Link>
         <nav className="flex items-center gap-5 text-sm">
           <Link href="/" className="hover:text-[var(--color-accent)]">
@@ -42,6 +66,9 @@ function SiteHeader() {
           </Link>
           <Link href="/recipes" className="hover:text-[var(--color-accent)]">
             Recipes
+          </Link>
+          <Link href="/about" className="hover:text-[var(--color-accent)]">
+            About
           </Link>
         </nav>
       </div>
