@@ -12,13 +12,12 @@ export default function AboutPage() {
         About me
       </h1>
       <div className="font-[family-name:var(--font-caveat)] text-2xl sm:text-3xl leading-relaxed text-[var(--color-ink)] space-y-5">
-        <p>Hi, I&apos;m Char. Welcome to my little corner of the internet.</p>
+        <p>Hi, I&apos;m Charmaine. Welcome to my digital recipe journal I created for myself.</p>
         <p>
-          This is where I keep the recipes I make over and over again — the
-          weeknight rescues, the slow Sundays, and the occasional ambitious
-          experiment.
+          This is where I keep the recipes I make over and over again — I found myself starting to feel lazy to write
+          down every recipe I make, so I decided to create this website as a cute way to keep track and share my recipes.
         </p>
-        <p>(Replace this placeholder copy with whatever feels true.)</p>
+        <p></p>
       </div>
     </article>
   );
