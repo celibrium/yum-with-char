@@ -17,7 +17,7 @@ export default function AboutPage() {
           This is where I keep the recipes I make over and over again — I found myself starting to feel lazy to write
           down every recipe I make, so I decided to create this website as a cute way to keep track and share my recipes.
         </p>
-        <p></p>
+        <p>From my more complicated recipes to the simplest ones that might not even be desrving to be called a recipe, there's something for everyone!</p>
       </div>
     </article>
   );

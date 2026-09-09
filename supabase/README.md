@@ -9,6 +9,7 @@ This folder contains all SQL needed to provision a fresh Supabase project for `y
    - `migrations/0001_init.sql`
    - `migrations/0002_rls.sql`
    - `migrations/0003_storage.sql`
+   - `migrations/0004_likes.sql`
 3. (Optional) Run `seed.sql` to insert a starter recipe.
 
 ## Create the admin user

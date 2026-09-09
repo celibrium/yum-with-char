@@ -31,6 +31,7 @@ export type Database = {
           servings: number | null;
           hero_image_path: string | null;
           published: boolean;
+          like_count: number;
           created_at: string;
           updated_at: string;
         };
@@ -47,6 +48,7 @@ export type Database = {
           servings?: number | null;
           hero_image_path?: string | null;
           published?: boolean;
+          like_count?: number;
           created_at?: string;
           updated_at?: string;
         };
@@ -154,6 +156,10 @@ export type Database = {
       is_admin: {
         Args: Record<string, never>;
         Returns: boolean;
+      };
+      like_recipe: {
+        Args: { p_recipe_id: string };
+        Returns: number;
       };
     };
     Enums: { [_ in never]: never };

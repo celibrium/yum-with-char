@@ -25,5 +25,6 @@ export type RecipeListItem = Pick<
   | "prep_time_minutes"
   | "cook_time_minutes"
   | "published"
+  | "like_count"
   | "created_at"
 >;

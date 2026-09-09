@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { LikeButton } from "@/components/like-button";
 import { getRecipeBySlug } from "@/lib/recipes";
 import { recipeImageUrl } from "@/lib/storage";
 
@@ -86,6 +87,13 @@ export default async function RecipeDetailPage({
             <Meta label="Total" value={`${totalTime} min`} />
           )}
         </dl>
+        <div className="pt-1">
+          <LikeButton
+            recipeId={recipe.id}
+            initialCount={recipe.like_count}
+            size="md"
+          />
+        </div>
         {recipe.tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {recipe.tags.map((t) => (

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LikeButton } from "@/components/like-button";
 import { recipeImageUrl } from "@/lib/storage";
 import type { RecipeListItem } from "@/types/recipe";
 
@@ -32,6 +33,13 @@ export function RecipeCard({ recipe }: { recipe: RecipeListItem }) {
             Draft
           </span>
         )}
+        <div className="absolute bottom-2 right-2">
+          <LikeButton
+            recipeId={recipe.id}
+            initialCount={recipe.like_count}
+            size="sm"
+          />
+        </div>
       </div>
       <div className="p-4">
         <h3 className="font-[family-name:var(--font-display)] text-lg leading-snug">

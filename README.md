@@ -2,8 +2,6 @@
 
 A digital recipe book for myself <3
 
-A single-admin recipe website built with Next.js, TypeScript, Tailwind CSS, and Supabase. Anyone can browse and read recipes; only I can add, edit, or delete them.
-
 ## Stack
 
 - **Next.js 16** (App Router) + **React 19** + **TypeScript**

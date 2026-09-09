@@ -14,7 +14,7 @@ export type RecipeListFilters = {
 };
 
 const LIST_COLUMNS =
-  "id, slug, title, description, cuisine, hero_image_path, prep_time_minutes, cook_time_minutes, published, created_at";
+  "id, slug, title, description, cuisine, hero_image_path, prep_time_minutes, cook_time_minutes, published, like_count, created_at";
 
 export async function listRecipes(
   filters: RecipeListFilters = {},
