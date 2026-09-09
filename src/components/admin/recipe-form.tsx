@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useActionState, useEffect, useState } from "react";
+import { useActionState, useState } from "react";
 import {
   IngredientEditor,
   type IngredientDraft,
@@ -43,17 +42,10 @@ export function RecipeForm({
   ) => Promise<RecipeFormState>;
   submitLabel: string;
 }) {
-  const router = useRouter();
   const [state, formAction, pending] = useActionState<
     RecipeFormState,
     FormData
   >(action, undefined);
-
-  useEffect(() => {
-    if (state?.ok) {
-      router.push("/admin");
-    }
-  }, [state, router]);
 
   const [title, setTitle] = useState(initial.title);
   const [slug, setSlug] = useState(initial.slug);
