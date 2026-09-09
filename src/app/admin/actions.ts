@@ -2,7 +2,6 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import sharp from "sharp";
 import { z } from "zod";
 import { requireAdmin } from "@/lib/auth";
 import { slugify } from "@/lib/slug";
@@ -73,29 +72,17 @@ async function uploadHeroImage(
   slug: string,
 ): Promise<string> {
   const { supabase } = await requireAdmin();
-
+  const ext = (file.name.split(".").pop() ?? "jpg")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+  const path = `${slug}/${Date.now()}.${ext || "jpg"}`;
   const arrayBuffer = await file.arrayBuffer();
-
-  let normalizedBuffer: Buffer;
-  try {
-    normalizedBuffer = await sharp(Buffer.from(arrayBuffer))
-      .rotate()
-      .jpeg({ quality: 85, mozjpeg: true })
-      .toBuffer();
-  } catch {
-    throw new Error(
-      "Image upload failed: unsupported image format. Please convert the file to JPG or PNG and try again.",
-    );
-  }
-
-  const path = `${slug}/${Date.now()}.jpg`;
   const { error } = await supabase.storage
     .from(RECIPE_IMAGES_BUCKET)
-    .upload(path, normalizedBuffer, {
-      contentType: "image/jpeg",
+    .upload(path, new Uint8Array(arrayBuffer), {
+      contentType: file.type || "image/jpeg",
       upsert: false,
     });
-
   if (error) throw new Error(`Image upload failed: ${error.message}`);
   return path;
 }

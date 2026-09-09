@@ -206,7 +206,7 @@ export function RecipeForm({
             <input
               type="file"
               name="hero_image"
-              accept="image/*,.heic,.heif"
+              accept="image/png,image/jpeg,image/webp"
               className="text-sm"
             />
           </div>
