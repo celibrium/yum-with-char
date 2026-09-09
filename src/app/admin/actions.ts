@@ -1,7 +1,6 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import sharp from "sharp";
 import { z } from "zod";
 import { requireAdmin } from "@/lib/auth";
@@ -222,12 +221,12 @@ export async function createRecipeAction(
           .insert(tagRows.map((t) => ({ recipe_id: inserted.id, tag_id: t.id })));
       }
     }
+
+    revalidatePath("/", "layout");
+    return { ok: true, id: inserted.id, slug: inserted.slug };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Unknown error" };
   }
-
-  revalidatePath("/", "layout");
-  redirect("/admin");
 }
 
 export async function updateRecipeAction(
@@ -350,12 +349,12 @@ export async function updateRecipeAction(
           .insert(tagRows.map((t) => ({ recipe_id: id, tag_id: t.id })));
       }
     }
+
+    revalidatePath("/", "layout");
+    return { ok: true, id, slug: v.slug };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Unknown error" };
   }
-
-  revalidatePath("/", "layout");
-  redirect("/admin");
 }
 
 export async function deleteRecipeAction(id: string) {
